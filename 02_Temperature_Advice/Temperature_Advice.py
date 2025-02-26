@@ -1,7 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        New File Generator (Temperature_Advice.py)
-# Purpose:     Coding Challenges (1.
-#     - The text outlines a simple logic for using _conditional statements_)
+# Purpose:     Coding Challenges (print, variables and conditionals)
 #
 # Author:      Dr.Renas
 # Created:     24-Feb-2025
