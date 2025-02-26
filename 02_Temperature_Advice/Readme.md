@@ -10,3 +10,5 @@ elif the temperature is between 10°C and 25°C,
 print: `"It's a nice day. Wear short-sleeves!"`
 C, 
 print: `"It's hot outside. Stay cool!"`
+
+End
