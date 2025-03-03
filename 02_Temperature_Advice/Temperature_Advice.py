@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-# Name:        New File Generator (Temperature_Advice.py)
+# Name:        (Temperature_Advice.py)
 # Purpose:     Coding Challenges (print, variables and conditionals)
 #
 # Author:      Dr.Renas

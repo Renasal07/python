@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-# Name:        New File Generator (DayoftheWeekActivityRecommender.py)
+# Name:        (DayoftheWeekActivityRecommender.py)
 # Purpose:     Coding Challenges (print, variables and conditionals)
 #
 #

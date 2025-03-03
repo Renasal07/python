@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-# Name:        New File Generator (even_or_odd.py)
+# Name:        (even_or_odd.py)
 # Purpose:     Coding Challenges (print, variables and conditionals)
 #
 # Author:      Dr.Renas

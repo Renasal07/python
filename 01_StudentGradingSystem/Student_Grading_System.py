@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-# Name:        New File Generator (Student_Grading_System.py)
+# Name:        (Student_Grading_System.py)
 # Purpose:     Coding Challenges (print, variables and conditionals)
 #
 # Author:      Dr.Renas

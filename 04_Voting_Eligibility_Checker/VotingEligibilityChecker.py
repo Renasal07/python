@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-# Name:        New File Generator (VotingEligibilityChecker.py)
+# Name:        (VotingEligibilityChecker.py)
 # Purpose:     Coding Challenges (print, variables and conditionals)
 #
 # Author:      Dr.Renas
