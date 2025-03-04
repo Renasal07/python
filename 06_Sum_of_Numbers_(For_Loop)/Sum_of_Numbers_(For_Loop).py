@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------
+# Name:        (Sum_of_Numbers.py)
+# Purpose:     Coding Challenges (For statement, and variables)
+#
+# Author:      Dr.Renas
+# Created:     3-Mar-2025
+# Updated:     3-Mar-2025
+#-----------------------------------------------------------------------------
+
 # Ask the user for a number
 num = int(input("Enter a number: "))
 
