@@ -15,7 +15,7 @@ while count > 0:  # Continue looping while count is greater than 0
     count -= 1  # Decrease the countdown variable by 1
 
     # Prompt the user to stop or continue
-    user_input = input('Enter "stop" to cancel or press Enter: ')
+    user_input = input('Enter "stop" to cancel or press Enter to continue: ')
 
     if user_input.lower() == "stop":  # Check if the user entered "stop"
         print("Countdown stopped!")  # Notify the user the countdown has stopped

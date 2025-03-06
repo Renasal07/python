@@ -18,3 +18,5 @@ for num in range(1, upper_limit + 1):  # Adding 1 because the stop value in rang
         continue  # Skip this iteration for even numbers
     # Print the number if it is odd
     print(num)
+
+print("Hey did you know that I skipped all the even numbers?")
