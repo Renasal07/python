@@ -8,7 +8,7 @@
 #-----------------------------------------------------------------------------
 
 import random
-
+print(" Please guess a number between 1 and 10.")
 # Step 1: Generate a random number between 1 and 10
 random_number = random.randint(1, 10)
 
