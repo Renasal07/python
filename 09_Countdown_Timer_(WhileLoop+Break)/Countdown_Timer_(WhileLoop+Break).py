@@ -22,5 +22,3 @@ while count > 0:  # Continue looping while count is greater than 0
         break  # Exit/break out of the loop
 
     # After the loop ends, the program exits
-
-
