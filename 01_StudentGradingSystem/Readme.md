@@ -1,4 +1,4 @@
-This is my pseudo code:
+This is my pseudocode:
 
 * print "please input your score"
 store the score in variable called 'store' by taking the user input

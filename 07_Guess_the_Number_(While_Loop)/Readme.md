@@ -1,4 +1,4 @@
-This is my pseudo code:
+This is my pseudocode:
 
 * print "please Guess a random number"
     store the score in variable called 'random_number' by taking the user input

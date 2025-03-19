@@ -1,4 +1,4 @@
-This is my pseudo code:
+This is my pseudocode:
 
 * print("Enter the current temperature (in Celsius)")
     * store the score in variable called 'temperature' by taking the user input

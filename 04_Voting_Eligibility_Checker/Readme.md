@@ -1,4 +1,4 @@
-This is my pseudo code:
+This is my pseudocode:
 
 * print "please input your age"
     * store the score in variable called 'age' by taking the user input

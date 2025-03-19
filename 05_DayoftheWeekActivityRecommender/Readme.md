@@ -1,4 +1,4 @@
-This is my pseudo code:
+This is my pseudocode:
 
 * Print "please enter the current day of the week"
     * Store the score in variable called 'day' by taking the user input

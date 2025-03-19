@@ -1,4 +1,4 @@
-This is my pseudo code:
+This is my pseudocode:
 
 
 * Store the score in variable called 'count' by taking the user input
