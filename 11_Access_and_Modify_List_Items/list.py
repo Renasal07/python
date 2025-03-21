@@ -3,8 +3,8 @@
 # Purpose:     Coding Challenges (create a list)
 #
 # Author:      Dr.Renas
-# Created:     19-Mar-2025
-# Updated:     19-Mar-2025
+# Created:     21-Mar-2025
+# Updated:     21-Mar-2025
 #-----------------------------------------------------------------------------
 
 # Define the initial list

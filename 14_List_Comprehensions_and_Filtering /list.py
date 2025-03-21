@@ -3,8 +3,8 @@
 # Purpose:     Coding Challenges (create a list)
 #
 # Author:      Dr.Renas
-# Created:     23-Mar-2025
-# Updated:     23-Mar-2025
+# Created:     21-Mar-2025
+# Updated:     21-Mar-2025
 #-----------------------------------------------------------------------------
 
 # Create a list of numbers from 1 to 10
