@@ -9,12 +9,12 @@
 
 # Define the initial list
 grocery_list = ['apples', 'bananas', 'carrots', 'milk', 'bread']
-
-# Change 'bananas' to 'grapes'
-grocery_list[1] = 'grapes'
-
-# Print the updated list
 print(grocery_list)
 
-# Access and print the third item in the list
-print(grocery_list[2])
+# Change 'carrots' to 'spinach'
+print("Here I have changed the list carrots, to spinach")
+grocery_list[2] = 'spinach'
+
+# Print the updated list
+print("Here is the updated grocery list:")
+print(grocery_list)

@@ -1,8 +1,9 @@
 This is my pseudocode:
 
 * Define the initial list
-* Change 'bananas' to 'grapes'
+* Change 'carrots' to 'spinach'
+* print("Here I have changed the list carrots, to spinach")
 * Print the updated list
-* Access and print the third item in the list
+* print("Here is the updated grocery list:")
 
 End
