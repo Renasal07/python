@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        (list.py)
-# Purpose:     Coding Challenges (make a list of coding)
+# Purpose:     Coding Challenges (Create a Grocery List and Add Items)
 #
 # Author:      Dr.Renas
 # Created:     18-Mar-2025

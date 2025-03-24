@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        (list.py)
-# Purpose:     Coding Challenges (create a list)
+# Purpose:     Coding Challenges ( List Comprehensions and Filtering)
 #
 # Author:      Dr.Renas
 # Created:     21-Mar-2025
