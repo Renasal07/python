@@ -8,8 +8,10 @@
 #-----------------------------------------------------------------------------
 
 # Step 1: Create a tuple with repeated values
-fruit_tuple = ("apple", "banana", "apple", "cherry", "banana", "apple")
+print("These are some available fruits to enter in question below.")
 
+fruit_tuple = ("apple", "banana", "apple", "cherry", "banana", "apple")
+print(fruit_tuple)
 # Step 2: Ask the user to enter a fruit name
 fruit_name = input("Enter a fruit name: ")
 

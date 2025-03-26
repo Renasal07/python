@@ -13,8 +13,8 @@ second_number = float(input("Enter second number: "))
 
 # Step 2: Store the numbers in a tuple
 numbers_tuple = (first_number, second_number)
-
-# Step 3: Swap the values using tuple unpacking
+print(f"Original values: {numbers_tuple}")
+# Step 3: Swap the values using tuple
 swapped_tuple = (numbers_tuple[1], numbers_tuple[0])
 
 # Step 4: Print the swapped values
