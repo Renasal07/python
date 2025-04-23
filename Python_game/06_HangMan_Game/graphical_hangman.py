@@ -38,24 +38,35 @@ MAX_WRONG = 6
 
 # Draw the hangman using Pygame primitives
 def draw_hangman(stage):
+    base_x = 50
+    base_y = 300
+    pole_height = 120
+    arm_length = 60
+    head_radius = 12
+
     # Base
-    pygame.draw.line(win, BLACK, (150, 500), (450, 500), 5)  # bottom
-    pygame.draw.line(win, BLACK, (300, 500), (300, 100), 5)  # pole
-    pygame.draw.line(win, BLACK, (300, 100), (450, 100), 5)  # top bar
-    pygame.draw.line(win, BLACK, (450, 100), (450, 150), 5)  # rope
+    pygame.draw.line(win, BLACK, (base_x, base_y), (base_x + 60, base_y), 3)  # bottom
+    pygame.draw.line(win, BLACK, (base_x + 30, base_y), (base_x + 30, base_y - pole_height), 3)  # pole
+    pygame.draw.line(win, BLACK, (base_x + 30, base_y - pole_height), (base_x + 30 + arm_length, base_y - pole_height), 3)  # top bar
+    pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height), (base_x + 30 + arm_length, base_y - pole_height + 20), 3)  # rope
 
     if stage > 0:
-        pygame.draw.circle(win, BLACK, (450, 180), 30, 3)  # head
+        pygame.draw.circle(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height + 35), head_radius, 2)  # head
     if stage > 1:
-        pygame.draw.line(win, BLACK, (450, 210), (450, 300), 3)  # body
+        pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height + 47),
+                         (base_x + 30 + arm_length, base_y - pole_height + 90), 2)  # body
     if stage > 2:
-        pygame.draw.line(win, BLACK, (450, 230), (400, 270), 3)  # left arm
+        pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height + 55),
+                         (base_x + 30 + arm_length - 20, base_y - pole_height + 70), 2)  # left arm
     if stage > 3:
-        pygame.draw.line(win, BLACK, (450, 230), (500, 270), 3)  # right arm
+        pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height + 55),
+                         (base_x + 30 + arm_length + 20, base_y - pole_height + 70), 2)  # right arm
     if stage > 4:
-        pygame.draw.line(win, BLACK, (450, 300), (400, 350), 3)  # left leg
+        pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height + 90),
+                         (base_x + 30 + arm_length - 20, base_y - pole_height + 110), 2)  # left leg
     if stage > 5:
-        pygame.draw.line(win, BLACK, (450, 300), (500, 350), 3)  # right leg
+        pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height + 90),
+                         (base_x + 30 + arm_length + 20, base_y - pole_height + 110), 2)  # right leg
 
 # Display text when game ends
 def display_message(text):
@@ -79,7 +90,7 @@ def draw():
     for letter in word:
         display_word += letter + " " if letter in guessed else "_ "
     word_text = WORD_FONT.render(display_word, True, BLACK)
-    win.blit(word_text, (400 - word_text.get_width() / 2, 200))
+    win.blit(word_text, (WIDTH / 2 - word_text.get_width() / 2, 200))
 
     # Letters
     for letter in letters:
@@ -93,7 +104,6 @@ def draw():
     draw_hangman(hangman_status)
 
     pygame.display.update()
-
 
 # Game loop
 run = True
@@ -118,9 +128,9 @@ while run:
 
     won = all(letter in guessed for letter in word)
     if won:
-        display_message("🎉 You Won!")
+        display_message("You Won!")
         break
 
     if hangman_status >= MAX_WRONG:
-        display_message(f"💀 You Lost! Word was: {word}")
+        display_message(f"You Lost! Word was: {word}")
         break
