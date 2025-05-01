@@ -2,8 +2,19 @@ import pygame
 import random
 import sys
 
-# Initialize Pygame
+# Initialize Pygame and mixer
 pygame.init()
+pygame.mixer.init()
+
+# Load background music
+pygame.mixer.music.load("chill-beats.mp3")  # Replace with your .mp3 file name
+pygame.mixer.music.set_volume(0.4)  # Volume (0.0 to 1.0)
+pygame.mixer.music.play(-1)  # Loop indefinitely
+
+# Load sound effects
+wrong_guess_sound = pygame.mixer.Sound("wrong-sound.mp3")  # Replace with the actual sound file
+win_sound = pygame.mixer.Sound("goodresult.mp3")  # Replace with the actual sound file
+lose_sound = pygame.mixer.Sound("losing-horn.mp3")  # Replace with the actual sound file
 
 # Screen setup
 WIDTH, HEIGHT = 800, 600
@@ -31,34 +42,14 @@ for i in range(26):
     letters.append([x, y, chr(A + i), True])
 
 words = [
-    # Jobs
     "doctor", "teacher", "engineer", "nurse", "pilot", "chef", "artist", "lawyer", "soldier", "plumber",
-    "carpenter", "scientist", "astronaut", "musician", "actor", "farmer", "mechanic", "dancer", "writer", "photographer",
-
-    # Fantasy & Myth
-    "wizard", "dragon", "unicorn", "goblin", "fairy", "witch", "vampire", "zombie", "giant", "phoenix",
-    "knight", "sorcerer", "ghost", "mermaid", "griffin", "troll", "elf", "dwarf", "spell", "curse",
-
-    # Sci-Fi & Space
-    "spaceship", "alien", "asteroid", "satellite", "galaxy", "planet", "nebula", "blackhole", "comet", "robotics",
-    "cyborg", "laser", "warp", "android", "teleport", "timewarp", "dimension", "gravity", "quantum", "rocketship",
-
-    # Common Verbs
-    "run", "jump", "swim", "dance", "sing", "laugh", "cry", "climb", "write", "draw",
-    "paint", "cook", "bake", "read", "drive", "sleep", "walk", "jog", "talk", "shout",
-
-    # Adjectives
-    "happy", "sad", "angry", "brave", "shy", "tall", "short", "quiet", "loud", "kind",
-    "funny", "silly", "bright", "dark", "cold", "hot", "fast", "slow", "smart", "lazy",
-
-    # More Random Nouns
-    "notebook", "backpack", "lantern", "glasses", "toaster", "bicycle", "radio", "trophy", "flag", "paintbrush",
-    "blanket", "scarf", "button", "chain", "hook", "leaf", "feather", "shell", "coin", "ring" ]
-
+    "carpenter", "scientist", "astronaut", "musician", "actor", "farmer", "mechanic", "dancer", "writer", "photographer"
+]
 word = random.choice(words).upper()
 guessed = []
 hangman_status = 0
 MAX_WRONG = 6
+
 
 # Draw the hangman using Pygame primitives
 def draw_hangman(stage):
@@ -71,8 +62,10 @@ def draw_hangman(stage):
     # Base
     pygame.draw.line(win, BLACK, (base_x, base_y), (base_x + 60, base_y), 3)  # bottom
     pygame.draw.line(win, BLACK, (base_x + 30, base_y), (base_x + 30, base_y - pole_height), 3)  # pole
-    pygame.draw.line(win, BLACK, (base_x + 30, base_y - pole_height), (base_x + 30 + arm_length, base_y - pole_height), 3)  # top bar
-    pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height), (base_x + 30 + arm_length, base_y - pole_height + 20), 3)  # rope
+    pygame.draw.line(win, BLACK, (base_x + 30, base_y - pole_height), (base_x + 30 + arm_length, base_y - pole_height),
+                     3)  # top bar
+    pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height),
+                     (base_x + 30 + arm_length, base_y - pole_height + 20), 3)  # rope
 
     if stage > 0:
         pygame.draw.circle(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height + 35), head_radius, 2)  # head
@@ -92,14 +85,20 @@ def draw_hangman(stage):
         pygame.draw.line(win, BLACK, (base_x + 30 + arm_length, base_y - pole_height + 90),
                          (base_x + 30 + arm_length + 20, base_y - pole_height + 110), 2)  # right leg
 
+
 # Display text when game ends
-def display_message(text):
+def display_message(text, sound_effect):
     pygame.time.delay(1000)
     win.fill(WHITE)
     message = WORD_FONT.render(text, True, BLACK)
     win.blit(message, (WIDTH / 2 - message.get_width() / 2, HEIGHT / 2))
     pygame.display.update()
+
+    # Play the sound for win or lose
+    sound_effect.play()
+
     pygame.time.delay(3000)
+
 
 # Draw the game screen
 def draw():
@@ -129,6 +128,7 @@ def draw():
 
     pygame.display.update()
 
+
 # Game loop
 run = True
 while run:
@@ -149,12 +149,13 @@ while run:
                     guessed.append(ltr)
                     if ltr not in word:
                         hangman_status += 1
+                        wrong_guess_sound.play()  # Play wrong guess sound
 
     won = all(letter in guessed for letter in word)
     if won:
-        display_message("You Won!")
+        display_message("You Won!", win_sound)  # Play win sound
         break
 
     if hangman_status >= MAX_WRONG:
-        display_message(f"You Lost! Word was: {word}")
+        display_message(f"You Lost! Word was: {word}", lose_sound)  # Play lose sound
         break
